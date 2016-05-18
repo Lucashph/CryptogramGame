@@ -5,18 +5,16 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class QuoteList {
+public class QuoteList extends Cryptogram {
 
 	private ArrayList<String> quotes;
 	
 	public QuoteList() throws FileNotFoundException {
 		
-		Scanner input = new Scanner(new File("quotes.txt"));
-		this.quotes = new ArrayList<String>();
-		
-		while (input.hasNextLine()) {
-			String line = input.nextLine();
-			this.quotes.add(line);
+		Scanner in = new Scanner(new File("quotes.txt"));
+		ArrayList<Cryptogram> words = new ArrayList<Cryptogram>();
+		while (in.hasNext()) {
+			words.add(new Cryptogram(in.nextLine()));
 		}
 	}
 	
