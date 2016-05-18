@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class QuoteList extends Cryptogram {
+public class QuoteList {
 
 	private ArrayList<String> quotes;
 	
