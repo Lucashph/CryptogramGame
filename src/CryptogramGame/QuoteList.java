@@ -7,24 +7,24 @@ import java.util.Scanner;
 
 public class QuoteList {
 
-	private ArrayList<String> quotes;
+	private ArrayList<Cryptogram> quotes;
 	
 	public QuoteList() throws FileNotFoundException {
 		
 		Scanner in = new Scanner(new File("quotes.txt"));
-		ArrayList<Cryptogram> words = new ArrayList<Cryptogram>();
+		this.quotes = new ArrayList<Cryptogram>();
 		while (in.hasNext()) {
-			words.add(new Cryptogram(in.nextLine()));
+			this.quotes.add(new Cryptogram(in.nextLine()));
 		}
 	}
 	
-	public String getRandomQuote() {
+	public Cryptogram getRandomQuote() {
 		
 		int rand = (int) (Math.random() * this.quotes.size());
 		return this.quotes.get(rand);
 	}
 	
-	public ArrayList<String> getQuotes() {
+	public ArrayList<Cryptogram> getQuotes() {
 		
 		return this.quotes;
 	}
