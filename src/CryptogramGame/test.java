@@ -17,6 +17,7 @@ public class test {
 		
 		String qu = c.getQuote();
 		
-		System.out.println(c.getQuoteArray().size());
+		System.out.println(c.getEncodedQuote().size());
+		System.out.println(c.getEncodedQuoteAsString());
 	}
 }
