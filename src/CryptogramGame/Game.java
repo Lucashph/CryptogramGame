@@ -16,7 +16,7 @@ public class Game extends Canvas implements Runnable {
 	private static JButton b1, b2;
 	private static final long serialVersionUID = 1L;
 	public static final int WIDTH = 640;
-	public static final int HEIGHT = WIDTH / 12 * 9;
+	public static final int HEIGHT = 320;
 	public static final int SCALE = 2;
 	public static final String TITLE = "Cryptogram Race";
 	
