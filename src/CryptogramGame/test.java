@@ -19,5 +19,6 @@ public class test {
 		
 		System.out.println(c.getEncodedQuote().size());
 		System.out.println(c.getEncodedQuoteAsString());
+		System.out.println(c.hint());
 	}
 }

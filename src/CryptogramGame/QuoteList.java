@@ -12,20 +12,20 @@ public class QuoteList {
 	public QuoteList() throws FileNotFoundException {
 		
 		Scanner in = new Scanner(new File("quotes.txt"));
-		this.quotes = new ArrayList<Cryptogram>();
+		quotes = new ArrayList<Cryptogram>();
 		while (in.hasNext()) {
-			this.quotes.add(new Cryptogram(in.nextLine()));
+			quotes.add(new Cryptogram(in.nextLine()));
 		}
 	}
 	
 	public Cryptogram getRandomQuote() {
 		
-		int rand = (int) (Math.random() * this.quotes.size());
-		return this.quotes.get(rand);
+		int rand = (int) (Math.random() * quotes.size());
+		return quotes.get(rand);
 	}
 	
 	public ArrayList<Cryptogram> getQuotes() {
 		
-		return this.quotes;
+		return quotes;
 	}
 }

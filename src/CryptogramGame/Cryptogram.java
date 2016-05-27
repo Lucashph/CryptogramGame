@@ -15,9 +15,9 @@ public class Cryptogram {
 		this.quotePerson = quotePerson;
 
 		String[] parts = quotePerson.split("\"");
-		this.quote = "";
+		quote = "";
 		if (parts.length > 1) {
-			this.quote = parts[1];
+			quote = parts[1];
 		}
 
 		ArrayList<Character> letters = new ArrayList<Character>();
@@ -32,20 +32,40 @@ public class Cryptogram {
 			letters.set(i, letters.get(j));
 			letters.set(j, c);
 		}
+		
 		// now `letters` is certifiably 100% randomly shuffled
-
-		this.encodedQuote = new ArrayList<Character>();
-		char[] chars = this.quote.toCharArray();
+		encodedQuote = new ArrayList<Character>();
+		char[] chars = quote.toCharArray();
 		for (int i = 0; i < chars.length; i++) {
 			char c = Character.toUpperCase(chars[i]);
 			if (65 <= c && c <= 90) {
-				this.encodedQuote.add(letters.get(c - 65));
+				encodedQuote.add(letters.get(c - 65));
 			} else {
-				this.encodedQuote.add(c);
+				encodedQuote.add(c);
 			}
 		}
 	}
 
+	public String getEncodedQuoteAsString() {
+		
+		char[] chars = new char[encodedQuote.size()];
+		int i = 0;
+		for (char c : encodedQuote) {
+			chars[i] = c;
+			i++;
+		}
+		return new String(chars);
+	}
+	
+	public String hint() {
+		
+		int randPosition;
+		do {
+			randPosition = randGen.nextInt(encodedQuote.size() - 1);
+		} while (encodedQuote.get(randPosition).equals(' '));
+		return "(\"" + encodedQuote.get(randPosition) + "\" equals \"" + quotePerson.substring(randPosition + 1, randPosition + 2).toUpperCase() + "\".)";
+	}
+	
 	public String getQuotePerson() {
 
 		return this.quotePerson;
@@ -53,21 +73,11 @@ public class Cryptogram {
 
 	public String getQuote() {
 
-		return this.quote;
+		return quote;
 	}
 
 	public ArrayList<Character> getEncodedQuote() {
 
-		return this.encodedQuote;
-	}
-	
-	public String getEncodedQuoteAsString() {
-		char[] chars = new char[this.encodedQuote.size()];
-		int i = 0;
-		for (char c : this.encodedQuote) {
-			chars[i] = c;
-			i++;
-		}
-		return new String(chars);
+		return encodedQuote;
 	}
 }
