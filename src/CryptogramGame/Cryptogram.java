@@ -1,17 +1,21 @@
 package CryptogramGame;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Cryptogram {
 
+	private double x, y;
 	private String quotePerson, quote;
 	private ArrayList<Character> encodedQuote;
 	
 	private static Random randGen = new Random(System.currentTimeMillis());
 
-	public Cryptogram(String quotePerson) {
+	public Cryptogram(double x, double y, String quotePerson) {
 
+		this.x = x;
+		this.y = y;
 		this.quotePerson = quotePerson;
 
 		String[] parts = quotePerson.split("\"");
@@ -79,5 +83,15 @@ public class Cryptogram {
 	public ArrayList<Character> getEncodedQuote() {
 
 		return encodedQuote;
+	}
+	
+	public void tick() {
+		
+		y -= .1;
+	}
+	
+	public void render(Graphics g) {
+		
+		g.drawString(getEncodedQuoteAsString(), (int) this.x, (int) this.y);
 	}
 }
