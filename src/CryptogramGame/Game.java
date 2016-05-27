@@ -8,7 +8,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 public class Game extends Canvas implements Runnable {
-	
+	//test
 	private static JFrame f1, f2;
 	private static JPanel p1;
 	private static JPanel p2;
@@ -171,6 +171,5 @@ public class Game extends Canvas implements Runnable {
 		
 		game.start();
 		
-		//test
 	}
 }
