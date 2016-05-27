@@ -8,7 +8,6 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 public class Game extends Canvas implements Runnable {
-	//test
 	private static JFrame f1, f2;
 	private static JPanel p1;
 	private static JPanel p2;
@@ -63,7 +62,7 @@ public class Game extends Canvas implements Runnable {
 				updates++;
 				delta--;
 			}
-//			render();
+			//render();
 			frames++;
 		}
 		stop();
@@ -85,9 +84,6 @@ public class Game extends Canvas implements Runnable {
 //		g.dispose();
 //		bs.show();
 //	}
-	
-	
-	
 	public static void main(String[] args) {
 		
 		Game game = new Game();
@@ -130,13 +126,8 @@ public class Game extends Canvas implements Runnable {
 
                     p2 = new JPanel();
                     p2.setBackground(Color.GRAY);
-                    
-                    GridBagConstraints c = new GridBagConstraints();
-            		
-            		//c.insets = new Insets(50,50,50,50);
-            		c.gridx = 0;
-            		c.gridy = 1;
-                    p2.add(b2,c);
+
+                    p2.add(b2);
                     
                     f2.add(p2);
                     
