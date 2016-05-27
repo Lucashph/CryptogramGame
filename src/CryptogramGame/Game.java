@@ -118,6 +118,7 @@ public class Game extends Canvas implements Runnable {
 		
 		ActionListener action  = new ActionListener()
         {
+			//checking
             public void actionPerformed(ActionEvent a)
             {
                 JButton button = (JButton) a.getSource();
