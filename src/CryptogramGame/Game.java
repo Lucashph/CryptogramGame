@@ -72,25 +72,11 @@ public class Game extends Canvas implements Runnable {
 		
 	}
 	
-//	private void render() {
-//		
-//		BufferStrategy bs = this.getBufferStrategy();
-//		if (bs == null) {
-//			createBufferStrategy(3);
-//			return;
-//		}
-//		Graphics g = bs.getDrawGraphics();
-//		g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-//		g.dispose();
-//		bs.show();
-//	}
 	public static void main(String[] args) {
 		
 		Game game = new Game();
 		
-//		game.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-//		game.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-//		game.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
+		game.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		
 		f1 = new JFrame("Cryptogram Race");
 		f1.setVisible(true);

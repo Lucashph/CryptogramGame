@@ -1,7 +1,6 @@
 package CryptogramGame;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
