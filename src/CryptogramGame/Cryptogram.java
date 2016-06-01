@@ -14,6 +14,7 @@ import java.util.Random;
 public class Cryptogram extends JPanel {
 
 	private int x, y;
+	private boolean check;
 	private String quotePerson, quote, hint;
 	private ArrayList<Character> encodedQuote;
 	
@@ -21,8 +22,9 @@ public class Cryptogram extends JPanel {
 
 	public Cryptogram(String quotePerson) {
 		
-		x = (int) (Math.random() * 1280);
-		y = -320;
+		x = 0;
+		y = 0;
+		check = true;
 		this.quotePerson = quotePerson;
 
 		String[] parts = quotePerson.split("\"");
@@ -69,14 +71,23 @@ public class Cryptogram extends JPanel {
 		g.fillRect(0, 0, 640 * 2, 320 * 2);
 		g.setColor(Color.black);
 		g.setFont(new Font("Courier", Font.PLAIN, 12));
+		int quoteWidth = g.getFontMetrics().stringWidth(this.getEncodedQuoteAsString() + " " + this.hint);
+		while (this.check) {
+			this.x = (int) (Math.random() * 1280);
+			while (this.x + quoteWidth > 640 * 2) {
+				this.x = (int) (Math.random() * 1280);
+			}
+			this.check = false;
+		}
 		g.drawString(this.getEncodedQuoteAsString() + " " + this.hint, this.x, this.y);
 	}
 	
 	public void start() throws InterruptedException {
+		
 		while (y <= 640) {
 			y++;
 			repaint();
-			Thread.sleep(10);
+			Thread.sleep(400);
 		}
 	}
 	
