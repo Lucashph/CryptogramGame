@@ -62,7 +62,7 @@ public class Game extends Canvas implements Runnable {
 				updates++;
 				delta--;
 			}
-			//render();
+//			render();
 			frames++;
 		}
 		stop();
@@ -92,7 +92,7 @@ public class Game extends Canvas implements Runnable {
 //		game.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 //		game.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		
-		f1 = new JFrame("Cryptogram Race Start");
+		f1 = new JFrame("Cryptogram Race");
 		f1.setVisible(true);
 		f1.setSize(900, 600);
 		f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
