@@ -77,6 +77,7 @@ public class Cryptogram extends JPanel {
 			while (this.x + quoteWidth > 640 * 2) {
 				this.x = (int) (Math.random() * 1280);
 			}
+			System.out.println("TEST");
 			this.check = false;
 		}
 		g.drawString(this.getEncodedQuoteAsString() + " " + this.hint, this.x, this.y);
