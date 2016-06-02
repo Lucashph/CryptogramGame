@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class QuoteList {
 
 	private ArrayList<Cryptogram> quotes;
+	Game game;
 	
 	public QuoteList() throws FileNotFoundException {
 		
