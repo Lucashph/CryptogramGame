@@ -21,7 +21,6 @@ public class Cryptogram extends GameObject {
 	private static Random randGen = new Random(System.currentTimeMillis());
 
 	public Cryptogram(ID id, int velY, String quotePerson) {
-			
 		super(id, velY);
 		
 		x = 0;
@@ -70,22 +69,18 @@ public class Cryptogram extends GameObject {
 	}
 	
 	public String getQuotePerson() {
-
 		return this.quotePerson;
 	}
 
 	public String getQuote() {
-
 		return quote;
 	}
 
 	public ArrayList<Character> getEncodedQuote() {
-
 		return encodedQuote;
 	}
 	
 	public String getEncodedQuoteAsString() {
-		
 		char[] chars = new char[encodedQuote.size()];
 		int i = 0;
 		for (char c : encodedQuote) {
@@ -96,7 +91,6 @@ public class Cryptogram extends GameObject {
 	}
 	
 	public String getHint() {
-		
 		return hint;
 	}
 
