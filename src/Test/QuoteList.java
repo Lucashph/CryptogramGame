@@ -8,10 +8,8 @@ import java.util.Scanner;
 public class QuoteList {
 
 	private ArrayList<Cryptogram> quotes;
-	Game game;
 	
 	public QuoteList() throws FileNotFoundException {
-		
 		Scanner in = new Scanner(new File("quotes.txt"));
 		quotes = new ArrayList<Cryptogram>();
 		while (in.hasNext()) {
@@ -20,13 +18,11 @@ public class QuoteList {
 	}
 	
 	public Cryptogram getRandomQuote() {
-		
 		int rand = (int) (Math.random() * quotes.size());
 		return quotes.get(rand);
 	}
 	
-	public ArrayList<Cryptogram> getQuotes() {
-		
+	public ArrayList<Cryptogram> getQuotes() {	
 		return quotes;
 	}
 }
